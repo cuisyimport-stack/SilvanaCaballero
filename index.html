@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silvana Caballero | Podología</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar" aria-label="Navegación principal">
+        <a class="brand" href="#inicio" aria-label="Inicio de Silvana Caballero Podología">
+          <span class="brand__mark">SC</span>
+          <span>
+            <strong>Silvana Caballero</strong>
+            <small>Odontología & Podología</small>
+          </span>
+        </a>
+        <div class="topbar__links">
+          <a href="#pacientes">Pacientes</a>
+          <a href="#citas">Citas</a>
+          <a href="#ingresos">Ingresos</a>
+          <a href="#galeria">Fotos</a>
+        </div>
+      </nav>
+
+      <section id="inicio" class="hero__content">
+        <div>
+          <p class="eyebrow">Gestión clínica integral</p>
+          <h1>App de podología para Silvana Caballero</h1>
+          <p class="hero__copy">
+            Registra pacientes, historial clínico, alergias, tratamientos, agenda de citas,
+            ingresos diarios y mensuales, y fotografías de antes y después en una sola herramienta.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#pacientes">Registrar paciente</a>
+            <a class="button button--secondary" href="#dashboard">Ver resumen</a>
+          </div>
+        </div>
+        <aside class="hero__card" aria-label="Resumen rápido">
+          <span class="hero__icon">🦶</span>
+          <h2>Podología con seguimiento visual</h2>
+          <p>Diseñada en verde, oliva y blanco para combinar con el logo del consultorio.</p>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section id="dashboard" class="section dashboard" aria-labelledby="dashboard-title">
+        <div class="section__heading">
+          <p class="eyebrow">Panel administrativo</p>
+          <h2 id="dashboard-title">Resumen del consultorio</h2>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span>Pacientes</span>
+            <strong id="patientCount">0</strong>
+            <small>Historias activas</small>
+          </article>
+          <article class="stat-card">
+            <span>Citas próximas</span>
+            <strong id="appointmentCount">0</strong>
+            <small>Agenda registrada</small>
+          </article>
+          <article class="stat-card">
+            <span>Ingresos de hoy</span>
+            <strong id="dailyIncome">$0</strong>
+            <small>Control diario</small>
+          </article>
+          <article class="stat-card">
+            <span>Ingresos del mes</span>
+            <strong id="monthlyIncome">$0</strong>
+            <small>Control mensual</small>
+          </article>
+        </div>
+      </section>
+
+      <section id="pacientes" class="section two-column" aria-labelledby="patients-title">
+        <div class="panel">
+          <div class="section__heading">
+            <p class="eyebrow">Registro de pacientes</p>
+            <h2 id="patients-title">Datos personales e historial</h2>
+          </div>
+          <form id="patientForm" class="form">
+            <label>
+              Nombre completo
+              <input name="name" type="text" placeholder="Ej. Laura Pérez" required />
+            </label>
+            <label>
+              Teléfono
+              <input name="phone" type="tel" placeholder="Ej. 555 123 4567" />
+            </label>
+            <label>
+              Edad
+              <input name="age" type="number" min="0" max="120" placeholder="Ej. 42" />
+            </label>
+            <label>
+              Alergias
+              <textarea name="allergies" placeholder="Medicamentos, látex, anestesia..."></textarea>
+            </label>
+            <label>
+              Historial clínico
+              <textarea name="history" placeholder="Diabetes, uñas encarnadas, hongos, cirugías..."></textarea>
+            </label>
+            <label>
+              Tratamiento indicado
+              <textarea name="treatment" placeholder="Quiropodia, ortonixia, curación, seguimiento..."></textarea>
+            </label>
+            <button class="button button--primary" type="submit">Guardar paciente</button>
+          </form>
+        </div>
+        <div class="panel">
+          <h3>Pacientes registrados</h3>
+          <div id="patientList" class="list empty-state">Aún no hay pacientes registrados.</div>
+        </div>
+      </section>
+
+      <section id="citas" class="section two-column" aria-labelledby="appointments-title">
+        <div class="panel">
+          <div class="section__heading">
+            <p class="eyebrow">Agenda</p>
+            <h2 id="appointments-title">Citas y seguimiento</h2>
+          </div>
+          <form id="appointmentForm" class="form">
+            <label>
+              Paciente
+              <input name="patient" type="text" placeholder="Nombre del paciente" required />
+            </label>
+            <label>
+              Fecha y hora
+              <input name="date" type="datetime-local" required />
+            </label>
+            <label>
+              Motivo de consulta
+              <textarea name="reason" placeholder="Valoración, control, tratamiento..."></textarea>
+            </label>
+            <button class="button button--primary" type="submit">Agendar cita</button>
+          </form>
+        </div>
+        <div class="panel">
+          <h3>Próximas citas</h3>
+          <div id="appointmentList" class="list empty-state">No hay citas agendadas.</div>
+        </div>
+      </section>
+
+      <section id="ingresos" class="section two-column" aria-labelledby="income-title">
+        <div class="panel">
+          <div class="section__heading">
+            <p class="eyebrow">Finanzas</p>
+            <h2 id="income-title">Ingresos diarios y mensuales</h2>
+          </div>
+          <form id="incomeForm" class="form">
+            <label>
+              Fecha
+              <input name="date" type="date" required />
+            </label>
+            <label>
+              Concepto
+              <input name="concept" type="text" placeholder="Consulta, tratamiento, control..." required />
+            </label>
+            <label>
+              Monto
+              <input name="amount" type="number" min="0" step="0.01" placeholder="0.00" required />
+            </label>
+            <button class="button button--primary" type="submit">Registrar ingreso</button>
+          </form>
+        </div>
+        <div class="panel">
+          <h3>Últimos ingresos</h3>
+          <div id="incomeList" class="list empty-state">Aún no hay ingresos registrados.</div>
+        </div>
+      </section>
+
+      <section id="galeria" class="section two-column" aria-labelledby="gallery-title">
+        <div class="panel">
+          <div class="section__heading">
+            <p class="eyebrow">Evolución visual</p>
+            <h2 id="gallery-title">Fotos de antes y después</h2>
+          </div>
+          <form id="photoForm" class="form">
+            <label>
+              Paciente
+              <input name="patient" type="text" placeholder="Nombre del paciente" required />
+            </label>
+            <label>
+              Foto antes
+              <input name="before" type="file" accept="image/*" required />
+            </label>
+            <label>
+              Foto después
+              <input name="after" type="file" accept="image/*" required />
+            </label>
+            <label>
+              Notas de evolución
+              <textarea name="notes" placeholder="Observaciones del tratamiento"></textarea>
+            </label>
+            <button class="button button--primary" type="submit">Guardar comparación</button>
+          </form>
+        </div>
+        <div class="panel">
+          <h3>Comparaciones guardadas</h3>
+          <div id="photoList" class="photo-grid empty-state">No hay fotos guardadas.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Silvana Caballero · Odontología & Podología</p>
+      <p>Aplicación local de gestión clínica con almacenamiento en el navegador.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
